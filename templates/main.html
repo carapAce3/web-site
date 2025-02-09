@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome</h1>
+            <nav>
+                <a href="/"><button onclick="showContent('main')" class="button_main"></button></a>
+                <a href="/menu"><button onclick="showContent('menu')" class="button_menu"></button></a>
+                <a href="/delivery"><button onclick="showContent('delivery')" class="button_delivery"></button></a>
+            </nav>    
+        </div>
+        
+        <div class="all-in-one">
+            <div id="main" class="content">
+                <h1>About us:</h1>
+                <h4>Welcome to ArtemLand, where innovation meets excellence. Founded in 2023, we are a dedicated team of professionals committed to delivering high-quality productsto our customers.</h4>
+                <h2>Our mission is simple:</h2>
+                <h4>To provide products that makes a difference in specific industry or area. We believe in putting our customers first, offering them not only top-notch products but also exceptional customer service.</h4>
+            </div>
+        </div>
+        <p>
+            <button id="number">Contact us:(+380)50 456 7252</button>
+        </p>
+        <button id="review-btn">Give a feedback</button>
+        <div id="review-modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Leave a review</h2>
+              <form action="/submit" method="POST">
+                <textarea name="review" placeholder="Your feedback..." required></textarea>
+                <button id="submit", type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+
+        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

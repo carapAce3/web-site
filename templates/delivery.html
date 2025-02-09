@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome</h1>
+            <nav>
+                <a href="/"><button onclick="showContent('main')" class="button_main"></button></a>
+                <a href="/menu"><button onclick="showContent('menu')" class="button_menu"></button></a>
+                <a href="/delivery"><button onclick="showContent('delivery')" class="button_delivery"></button></a>
+            </nav>     
+        </div>
+        
+        <div class="all-in-one">
+            <div id="delivery" class="content">
+                <h1>We're delivering your products by all country, to every single point in our country</h1>
+            </div>
+        </div>
+
+        <button id="review-btn">Finish order</button>
+        <div id="review-modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Check your order</h2>
+              <form action="/submit2" method="POST">
+                <select name="food" id="">
+                    <option value="Cheeseburger">Cheeseburger</option>
+                    <option value="Cheesesticks">Cheesesticks</option>
+                    <option value="Fries">Fries</option>
+                    <option value="Hamburger">Hamburger</option>
+                    <option value="Pepsi">Pepsi</option>
+                </select>
+                <textarea name="place" placeholder="Where to delivery?" required></textarea>
+                <textarea name="card" placeholder="Card id" required></textarea>
+                <textarea name="date" placeholder="**/**" required></textarea>
+                <textarea name="cvv" placeholder="CVV" required></textarea>
+                <button id="submit",type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+          
+
+        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

@@ -38,6 +38,35 @@ def delivery_form():
     return render_template('delivery.html')
 
 
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    review = request.form['review']
+    
+    with sqlite3.connect("database2.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO savings (review) VALUES (?)', (review,))
+        conn.commit()
+    
+    return redirect("/")
+
+@app.route('/submit2', methods=['POST'])
+def submit2_form():
+    place = request.form['place']
+    card = request.form['card']
+    date = request.form['date']
+    cvv = request.form['cvv']
+    food = request.form['food']
+    
+    with sqlite3.connect("database2.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO ooo (delivery, card, date, CVV, food) VALUES (?,?,?,?,?)', (place, card, date, cvv, food))
+        conn.commit()
+    
+    return redirect("/")
+
+
 if __name__ == '__main__':
     #app.run(debug=True)
     app.run(debug=True, host='0.0.0.0', port=5000)
+
+# https://carapacee.pythonanywhere.com/

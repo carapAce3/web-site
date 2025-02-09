@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome</h1>
+            <nav>
+                <a href="/"><button onclick="showContent('main')" class="button_main"></button></a>
+                <a href="/menu"><button onclick="showContent('menu')" class="button_menu"></button></a>
+                <a href="/delivery"><button onclick="showContent('delivery')" class="button_delivery"></button></a>
+            </nav>    
+        </div>
+        
+        <div class="all-in-one">
+            <div id="main" class="content">
+                <h1>About us: </h1>
+            </div>
+        </div>
+        <p>
+            <button id="number">Contact us:(+380)50 456 7252</button>
+        </p>
+
+        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

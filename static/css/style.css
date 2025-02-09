@@ -1,0 +1,200 @@
+/* Основной стиль страницы */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #F5E1A4, #D1B49D);  /* Мягкий бежевый и светлый коричневый */
+    color: #3E3B32;  /* Темно-коричневый цвет для текста */
+}
+
+/* Стиль контейнера с кнопками */
+.container {
+    text-align: center;
+    padding: 30px 50px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9);  /* Полупрозрачный белый для контраста */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 60%;
+    z-index: 2;  /* Чтобы контейнер был поверх контента */
+}
+
+/* Стиль заголовков */
+.h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #3E3B32;  /* Темно-коричневый текст для заголовков */
+}
+
+/* Стили кнопок */
+button {
+    padding: 12px 28px;
+    font-size: 12px;
+    color: #fff;
+    background: #C79A6A;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(12);
+}
+
+button:active {
+    transform: scale(10);
+}
+
+.button_menu {
+    background: url("menu.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius:0px;
+    padding: 1%;
+    transform: scale(700%);
+    margin-left: 90px;
+    margin-right: 90px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.products {
+    width: 140px;
+    height: 140px;
+}
+.button_main {
+    background: url("main.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius:0px;
+    padding: 1%;
+    transform: scale(700%);
+    margin-left: 90px;
+    margin-right: 90px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+}
+.button_delivery {
+    background: url("skuter.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius:0px;
+    padding: 1%;
+    transform: scale(700%);
+    margin-left: 90px;
+    margin-right: 90px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+#review-btn:hover{
+    transform: scale(1);
+}
+#review-btn:active{
+    transform: scale(0.7);
+}
+#submit:hover{
+    transform: scale(1.1);
+}
+
+#submit:active{
+    transform: scale(1); 
+}
+
+#number:hover{
+    transform: scale(1);
+}
+#number:active{
+    transform: scale(1);
+}
+
+/* Контейнер с контентом */
+.all-in-one {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    width: 80%;
+    z-index: 1;
+}
+
+/* Стили для контента */
+.content {
+    padding: 20px;
+    font-size: 18px;
+    color: #3E3B32;  /* Темный текст для контента */
+    background: #F0E2C9;  /* Светлый бежевый фон */
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Активный контент */
+.content1.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Анимация для плавного появления контента */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для изображений */
+.content-image {
+    max-width: 50px;
+    margin-top: 20px;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .all-in-one {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .content {
+        width: 100%;
+        padding: 15px;
+    }
+}
+.modal { display: none; position: below; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.modal-content { background-color: white; padding: 20px; margin: 15% auto; width: 80%; max-width: 400px; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+.close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }

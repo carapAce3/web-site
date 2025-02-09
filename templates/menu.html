@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome</h1>
+            <nav>
+                <a href="/"><button onclick="showContent('main')" class="button_main"></button></a>
+                <a href="/menu"><button onclick="showContent('menu')" class="button_menu"></button></a>
+                <a href="/delivery"><button onclick="showContent('delivery')" class="button_delivery"></button></a>
+            </nav>      
+        </div>
+        
+        <div class="all-in-one">
+            <div id="menu" class="content">
+                <h1>Our products:</h1>
+                <img class="products" src="{{ url_for ('static', filename='images/fries.png') }}">
+                <img class="products" src="{{ url_for ('static', filename='images/cheeseburger.png') }}">
+                <img class="products" src="{{ url_for ('static', filename='images/cheesesticks.png') }}">
+                <img class="products" src="{{ url_for ('static', filename='images/hamburger.png') }}">
+                <img class="products" src="{{ url_for ('static', filename='images/pepsi.png') }}">
+            </div>
+        </div>
+
+        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
